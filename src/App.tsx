@@ -1,8 +1,15 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 function App() {
-  return <div className="App">test</div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<div>Hello</div>} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
