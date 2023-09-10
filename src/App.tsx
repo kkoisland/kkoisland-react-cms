@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Header, Footer, YearList } from './components';
+import { Header, Footer, YearList, BlogDetail } from './components';
 import { Main } from './containers';
 import './App.css';
 
@@ -24,6 +24,7 @@ function App() {
         <Route path="/2016" element={<YearList year="2016" />} />
         <Route path="/2017" element={<YearList year="2017" />} />
         <Route path="/2018" element={<YearList year="2018" />} />
+        <Route path="/blog/:year/:month/:date" element={<BlogDetail />} />
       </Routes>
       <Footer />
     </BrowserRouter>

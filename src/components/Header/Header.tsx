@@ -29,8 +29,9 @@ const Header = () => {
       <nav>
         <ul className="year-list-item">
           {years.map((year) => (
-            // <a href="#">{year}</a>
-            <Link to={`/${year}`}>{year}</Link>
+            <Link to={`/${year}`} key={year}>
+              {year}
+            </Link>
           ))}
         </ul>
       </nav>
