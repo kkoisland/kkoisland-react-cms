@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 import React from 'react';
 import './Header.scss';
@@ -6,20 +6,20 @@ import './Header.scss';
 const Header = () => {
   const navigate = useNavigate();
   const years = [
-    2018,
-    2017,
-    2016,
-    2015,
-    2014,
-    2013,
-    2012,
-    2011,
-    2010,
-    2009,
-    2008,
-    2007,
-    2006,
-    2005,
+    '2018',
+    '2017',
+    '2016',
+    '2015',
+    '2014',
+    '2013',
+    '2012',
+    '2011',
+    '2010',
+    '2009',
+    '2008',
+    '2007',
+    '2006',
+    '2005',
     '2004以前',
   ];
 
@@ -29,7 +29,8 @@ const Header = () => {
       <nav>
         <ul className="year-list-item">
           {years.map((year) => (
-            <a href="#">{year}</a>
+            // <a href="#">{year}</a>
+            <Link to={`/${year}`}>{year}</Link>
           ))}
         </ul>
       </nav>
