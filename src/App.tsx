@@ -2,7 +2,9 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header, Footer, YearList, BlogDetail } from './components';
 import { Main } from './containers';
-import './App.css';
+import './styles/global.scss';
+import './styles/utils/utils.scss';
+// import './App.css';
 
 function App() {
   return (

@@ -1,0 +1,91 @@
+/*!
+global > color
+------------------------------
+*/
+
+:root {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #efede9;
+  --color-bg-black: #000000;
+  --color-bg-white: #ffffff;
+  --color-border-black: #000000;
+  --color-border-white: #ffffff;
+  --color-font-primary: #524433;
+  --color-font-white: #ffffff;
+  --color-font-base: #000000;
+  --color-primary: #ff4f6c;
+
+  --color-bg-primary-dark: #222222;
+  --color-bg-secondary-dark: #333333;
+  --color-bg-black-dark: #000000;
+  --color-bg-white-dark: #ffffff;
+  --color-border-black-dark: #000000;
+  --color-border-white-dark: #ffffff;
+  --color-font-primary-dark: #dddddd;
+  --color-font-white-dark: #ffffff;
+  --color-font-base-dark: #ffffff;
+  --color-primary-dark: #ff4f6c;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* システムがダークモードの場合のスタイル */
+  :root {
+    --color-bg-primary: var(--color-bg-primary-dark);
+    --color-bg-secondary: var(--color-bg-secondary-dark);
+    --color-bg-black: var(--color-bg-black-dark);
+    --color-bg-white: var(--color-bg-white-dark);
+    --color-border-black: var(--color-border-black-dark);
+    --color-border-white: var(--color-border-white-dark);
+    --color-font-primary: var(--color-font-primary-dark);
+    --color-font-white: var(--color-font-white-dark);
+    --color-font-base: var(--color-font-base-dark);
+    --color-primary: var(--color-primary-dark);
+  }
+}
+
+/* ページのスタイル */
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-font-base);
+}
+
+/* 他のスタイルルール */
+/* button, a(リンク), .header など、必要に応じてdark-modeを入れていく */
+
+/*!
+  global > content-width
+  ------------------------------
+  */
+:root {
+  --width-content-s: 960px;
+  --width-content: 1080px;
+  --width-content-l: 1200px;
+}
+
+/*!
+  global > font
+  ------------------------------
+  */
+:root {
+  --font-family-base: 'Noto Sans JP', sans-serif;
+  --font-family-english: 'Montserrat', sans-serif;
+}
+
+/*!
+foundation > base
+------------------------------
+*/
+body {
+  line-height: 1.8;
+  font-size: 14px;
+  color: var(--color-font-base);
+  font-family: var(--font-family-base);
+}
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+button {
+  cursor: pointer;
+}
