@@ -1,4 +1,6 @@
 import { useNavigate, Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 import React from 'react';
 import './Header.scss';
@@ -25,7 +27,22 @@ const Header = () => {
 
   return (
     <header>
-      <h1 onClick={() => navigate('/')}>KKoisland Header</h1>
+      <div onClick={() => navigate('/')}>KKoisland Header</div>
+      <div style={{ textAlign: 'right', padding: '0 10px' }}>
+        <a href="https://github.com/kkoisland" target="_blank" rel="noreferrer">
+          <FontAwesomeIcon className="iconStyle" icon={faGithub} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/keiko-higuchi-b554449/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FontAwesomeIcon className="iconStyle" icon={faLinkedin} size="2x" />
+        </a>
+        <a href="https://twitter.com/kkoisland" target="_blank" rel="noreferrer">
+          <FontAwesomeIcon className="iconStyle" icon={faTwitter} />
+        </a>
+      </div>
       <nav>
         <ul className="year-list-item">
           {years.map((year) => (
