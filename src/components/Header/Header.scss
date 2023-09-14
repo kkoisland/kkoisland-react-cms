@@ -1,7 +1,12 @@
-.year-list-item {
+.header-top {
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap;
   align-items: center;
+  padding-top: 16px;
+}
+
+.icon-div {
+  //右寄りにする
 }
 
 .iconStyle {
@@ -9,4 +14,10 @@
   font-size: '20px';
   text-decoration: 'none';
   color: 'black';
+}
+
+.year-list-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
