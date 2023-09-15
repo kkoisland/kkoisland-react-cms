@@ -2,18 +2,28 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding-top: 16px;
+  padding-top: 1rem;
+  justify-content: space-around;
+  width: 100%;
 }
 
-.icon-div {
-  //右寄りにする
+.header-kkoisland {
+  font-size: 2rem;
+  line-height: 1.1;
+  color: var(--color-primary);
 }
 
-.iconStyle {
-  padding: '0 10px';
-  font-size: '20px';
-  text-decoration: 'none';
-  color: 'black';
+.icon-style-div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.icon-style {
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  text-decoration: none;
+  color: navy;
 }
 
 .year-list-item {

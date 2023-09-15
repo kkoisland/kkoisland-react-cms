@@ -28,20 +28,33 @@ const Header = () => {
   return (
     <header>
       <div className="header-top">
-        <div onClick={() => navigate('/')}>KKoisland Header</div>
-        <div className="icon-div">
-          <a href="https://github.com/kkoisland" target="_blank" rel="noreferrer">
-            <FontAwesomeIcon className="iconStyle" icon={faGithub} />
+        <div onClick={() => navigate('/')} className="header-kkoisland">
+          kkoisland
+        </div>
+        <div className="icon-style-div">
+          <a
+            href="https://github.com/kkoisland"
+            className="icon-style"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon icon={faGithub} size="2x" />
           </a>
           <a
             href="https://www.linkedin.com/in/keiko-higuchi-b554449/"
             target="_blank"
+            className="icon-style"
             rel="noreferrer"
           >
-            <FontAwesomeIcon className="iconStyle" icon={faLinkedin} size="2x" />
+            <FontAwesomeIcon icon={faLinkedin} size="2x" />
           </a>
-          <a href="https://twitter.com/kkoisland" target="_blank" rel="noreferrer">
-            <FontAwesomeIcon className="iconStyle" icon={faTwitter} />
+          <a
+            href="https://twitter.com/kkoisland"
+            target="_blank"
+            className="icon-style"
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon icon={faTwitter} size="2x" />
           </a>
         </div>
       </div>
