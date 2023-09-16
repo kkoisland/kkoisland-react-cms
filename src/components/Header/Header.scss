@@ -34,9 +34,11 @@
   padding: 0;
   margin: 0; /* リストの外側の余白を削除 */
   font-size: 1rem;
-  background-color: var(--color-bg-secondary);
   gap: 10px;
   height: 2.5rem;
+  font-weight: 500;
+  // background-color: var(--color-bg-secondary);
+  // background: linear-gradient(45deg, #fce6e6, #fcd1d1, #fabbbb, #faa5a5, #fa8f8f);
 }
 
 .year-list-item a {
