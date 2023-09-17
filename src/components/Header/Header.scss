@@ -38,12 +38,12 @@
   height: 2.5rem;
   font-weight: 500;
   // background-color: var(--color-bg-secondary);
-  // background: linear-gradient(45deg, #fce6e6, #fcd1d1, #fabbbb, #faa5a5, #fa8f8f);
+  background: linear-gradient(45deg, #fce6e6, #fcd1d1, #fabbbb, #faa5a5, #fa8f8f);
 }
 
 .year-list-item a {
   text-decoration: none;
-  margin: 0 5px; /* リンク間のマージンを設定 */
+  margin: 0 0.25rem; /* リンク間のマージンを設定 */
   color: var(--color-font-base);
   transition: color 0.3s ease-in-out;
 }

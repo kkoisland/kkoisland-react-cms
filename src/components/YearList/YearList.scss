@@ -1,3 +1,63 @@
 .year-list-body {
   min-height: 300px;
+  width: 80%;
+  margin: 0 auto; /* 水平方向に中央寄せ */
+  color: var(--color-font-primary);
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* カード間の間隔を調整 */
+  align-items: center; /* 上下中央揃え */
+}
+
+.card {
+  flex: 0 0 calc(33.33% - 1rem); /* カードの幅を均等に設定 */
+  box-sizing: border-box; /* ボーダーボックスモデルを使用して幅を計算 */
+  justify-content: space-around;
+  padding: 1.25rem;
+  border: 0.065rem solid #e0e0e0; /* カードにボーダーを追加 */
+  border-radius: 0.5rem; /* カードの角を丸くする */
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out; /* ホバー時のアニメーション */
+  position: relative; /* カード内の要素を絶対位置指定するために親要素を相対位置に設定 */
+  // background: var(--color-bg-secondary);
+  /* ドットの背景パターン */
+  background: var(--color-bg-secondary);
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 1px, transparent 0.065rem);
+  background-size: 1rem 1rem; /* ドットのサイズを調整 */
+
+  // background: linear-gradient(45deg, #f5e6d2, #f5d2b5, #f5bd99); //茶色ok
+  // background: linear-gradient(45deg, #fffaed, #fff7e1, #fff4d5); //オレンジok
+  // background: linear-gradient(45deg, #e4f5d4, #d1f3b6, #c0f195); //緑
+  // background: linear-gradient(45deg, #ffdde9, #ffc7da, #ffb1ca); //ピンク
+  // background: linear-gradient(45deg, #e1d2f5, #d3c0f5, #c4aef5); //紫
+  // background: linear-gradient(45deg, #fffbed, #fff9db, #fff8c9); //黄色ok
+  // background: linear-gradient(45deg, #e8f8ff, #d0f0ff, #b8e8ff); //青ok
+  // background: linear-gradient(45deg, #f2fff2, #d9ffd9, #c0ffc0); //若葉色ok
+  // background: linear-gradient(45deg, #e4d8bb, #d7c6a1, #cab588); //枯れ草色
+  // background: linear-gradient(45deg, #aee1e1, #8ed8d8, #6ecfcf);　//水色
+  // background: linear-gradient(45deg, #fff0f4, #ffd1dc, #ffb6ca); //白に近い桜色ok
+}
+
+.card:hover {
+  transform: scale(1.05); /* ホバー時にカードを拡大する */
+}
+
+.card-date {
+  display: flex;
+  justify-content: flex-end; /* 日付を右寄せ */
+}
+
+@media (max-width: 1000px) {
+  .card {
+    flex: 0 0 calc(50% - 1rem); /* ウィンドウ幅が1000px以下の場合、2列に */
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    flex: 0 0 calc(100% - 1rem); /* ウィンドウ幅が600px以下の場合、1列に */
+  }
 }
