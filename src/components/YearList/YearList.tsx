@@ -8,9 +8,16 @@ interface YearListProps {
 }
 
 const allBlogs = [
-  { id: 1, year: '2018', month: '12', date: '01', title: '記事1', content: '記事1の内容' },
+  {
+    id: 1,
+    year: '2018',
+    month: '12',
+    date: '01',
+    title: '記事1',
+    content: '記事1の内容',
+  },
   { id: 2, year: '2018', month: '12', date: '02', title: '記事2', content: '記事2の内容' },
-  { id: 3, year: '2017', month: '11', date: '15', title: '記事3', content: '記事3の内容' },
+  { id: 3, year: '2018', month: '11', date: '15', title: '記事3', content: '記事3の内容' },
   { id: 4, year: '2018', month: '12', date: '04', title: '記事4', content: '記事4の内容' },
 ];
 
