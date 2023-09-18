@@ -1,29 +1,17 @@
 import React from 'react';
 // import { useNavigate } from 'react-router-dom';
 
+import blogTitle from '../../data/blogTitle.json';
+
 import './YearList.scss';
 
 interface YearListProps {
   year: string;
 }
 
-const allBlogs = [
-  {
-    id: 1,
-    year: '2018',
-    month: '12',
-    date: '01',
-    title: '記事1',
-    content: '記事1の内容',
-  },
-  { id: 2, year: '2018', month: '12', date: '02', title: '記事2', content: '記事2の内容' },
-  { id: 3, year: '2018', month: '11', date: '15', title: '記事3', content: '記事3の内容' },
-  { id: 4, year: '2018', month: '12', date: '04', title: '記事4', content: '記事4の内容' },
-];
-
 const YearList = ({ year }: YearListProps) => {
   // const navigate = useNavigate();
-  const filteredArticles = allBlogs.filter((blog) => {
+  const filteredArticles = blogTitle.filter((blog) => {
     return blog.year === year;
   });
 
@@ -44,7 +32,6 @@ const YearList = ({ year }: YearListProps) => {
               {blogDate.year}/{blogDate.month}/{blogDate.date}
             </span>
             <h3>{blogDate.title}</h3>
-            <p>{blogDate.content}</p>
           </div>
         ))}
       </div>
