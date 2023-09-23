@@ -1,3 +1,8 @@
+# すべてのホームページで作ったファイル(1998-2004)の*.htmlを、Shift-JISからUTF-8に変換する
+# input : diary
+# output : diary_output
+# perl 03convert_diary_utf8.pl
+
 #!/usr/bin/perl
 use strict;
 use warnings;
@@ -5,8 +10,8 @@ use Encode;
 use File::Copy::Recursive qw(dircopy);
 
 # 入力ディレクトリと出力ディレクトリを指定
-my $input_dir = "blog";
-my $output_dir = "blog_output";
+my $input_dir = "diary";
+my $output_dir = "diary_output";
 
 # 出力ディレクトリを作成（既に存在する場合はスキップ）
 mkdir $output_dir unless -d $output_dir;
@@ -14,7 +19,7 @@ mkdir $output_dir unless -d $output_dir;
 # 入力ディレクトリの中身を出力ディレクトリにコピー
 dircopy($input_dir, $output_dir) or die "Cannot copy directory: $!";
 
-# 入力ディレクトリ内の index.html ファイルをShift-JISからUTF-8に変換
+# 入力ディレクトリ内の .html ファイルをShift-JISからUTF-8に変換
 process_directory($output_dir);
 
 print "変換が完了しました。\n";
@@ -27,8 +32,8 @@ sub process_directory {
     my $path = "$dir/$entry";
     if (-d $path) {
       process_directory($path); # サブディレクトリ内も再帰的に処理
-    } elsif (-f $path && $entry eq 'index.html') {
-      # ファイルの場合かつファイル名が index.html の場合、Shift-JISからUTF-8に変換
+    } elsif (-f $path && $entry =~ /\.html$/i) {
+      # ファイルの場合かつ拡張子が .html の場合、Shift-JISからUTF-8に変換
       convert_file_encoding($path);
     }
   }

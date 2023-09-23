@@ -1,8 +1,7 @@
-# すべてのブロッサムで作ったブログ形式のファイル(2004~2018)を、jsonに抽出する
+# すべてのブロッサムで作ったブログ形式のファイル(2005~2018)を、jsonに抽出する
 # input : blog/{yest}/{monty}/{date}/index.html
 # output : blogTitle.json
 # perl extract.pl
-
 
 #!/usr/bin/perl
 use strict;
