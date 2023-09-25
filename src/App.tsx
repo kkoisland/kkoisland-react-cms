@@ -1,7 +1,6 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header, Footer, YearList, BlogDetail } from './components';
-import { Main } from './containers';
 import './styles/global.scss';
 import './styles/utils/utils.scss';
 // import './App.css';
@@ -11,7 +10,7 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<YearList year="2018" />} />
         <Route path="/2005" element={<YearList year="2005" />} />
         <Route path="/2006" element={<YearList year="2006" />} />
         <Route path="/2007" element={<YearList year="2007" />} />

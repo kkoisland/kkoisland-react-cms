@@ -26,6 +26,9 @@
   background: var(--color-bg-secondary);
   background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 1px, transparent 0.065rem);
   background-size: 1.5rem 1.5rem; /* ドットのサイズを調整 */
+
+  /* 画像を中央に配置するスタイル */
+  text-align: center; /* カード内のテキストを中央揃え */
 }
 
 @media (max-width: 1000px) {
