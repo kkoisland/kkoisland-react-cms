@@ -1,5 +1,5 @@
 import React from 'react';
-// import { useNavigate } from 'react-router-dom';
+//later import { useNavigate } from 'react-router-dom';
 
 import blogData from '../../data/blogData.json';
 
@@ -36,7 +36,7 @@ interface YearListProps {
 }
 
 const YearList = ({ year }: YearListProps) => {
-  // const navigate = useNavigate();
+  //later const navigate = useNavigate();
   const filteredArticles = dummyBlogData.filter((blog) => {
     // const filteredArticles = blogData.filter((blog) => {
     return blog.year === year;
@@ -45,9 +45,9 @@ const YearList = ({ year }: YearListProps) => {
   const handleLinkClick = (blogDate: any) => {
     const detailPageUrl = `/blog/${blogDate.year}/${blogDate.month}/${blogDate.date}/index.html`;
     window.location.href = detailPageUrl;
-    // navigateを使えるようにするには、バックエンドから url をとってくる必要があるっぽい(?)
-    // const detailPageUrl = `/blog/${blogDate.year}/${blogDate.month}/${blogDate.date}/`;
-    // navigate(detailPageUrl);
+    //later navigateを使えるようにするには、バックエンドから url をとってくる必要があるっぽい(?)
+    //later const detailPageUrl = `/blog/${blogDate.year}/${blogDate.month}/${blogDate.date}/`;
+    //later navigate(detailPageUrl);
   };
   return (
     <div className="year-list-body">
@@ -59,7 +59,6 @@ const YearList = ({ year }: YearListProps) => {
               {blogDate.year}/{blogDate.month}/{blogDate.date}
             </span>
             <h3>{blogDate.title}</h3>
-            {/* <img src="/bimages/2018/062.jpg" width="180" height="120" alt={blogDate.title} /> */}
             {blogDate.image && (
               <img
                 src={`/bimages/${blogDate.image}`}

@@ -22,10 +22,10 @@
   cursor: pointer;
   transition: transform 0.2s ease-in-out; /* ホバー時のアニメーション */
   position: relative; /* カード内の要素を絶対位置指定するために親要素を相対位置に設定 */
-  /* ドットの背景パターン */
   background: var(--color-bg-secondary);
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 1px, transparent 0.065rem);
-  background-size: 1.5rem 1.5rem; /* ドットのサイズを調整 */
+  /* ドットの背景パターン */
+  // background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 1px, transparent 0.065rem);
+  // background-size: 1.5rem 1.5rem; /* ドットのサイズを調整 */
 
   /* 画像を中央に配置するスタイル */
   text-align: center; /* カード内のテキストを中央揃え */
