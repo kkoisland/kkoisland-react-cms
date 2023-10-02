@@ -5,40 +5,40 @@ import blogData from '../../data/blogData.json';
 
 import './YearList.scss';
 
-const dummyBlogData = [
-  {
-    id: 1,
-    year: '2018',
-    month: '12',
-    date: '01',
-    title: 'ダミー記事1',
-    image: '2018/062.jpg',
-  },
-  {
-    id: 2,
-    year: '2018',
-    month: '12',
-    date: '02',
-    title: 'ダミー記事2',
-    image: '2018/051.jpg',
-  },
-  {
-    id: 3,
-    year: '2018',
-    month: '11',
-    date: '15',
-    title: 'ダミー記事3ダミー記事3ダミー記事3ダミー記事3',
-    image: '2018/047.jpg',
-  },
-];
+// const dummyBlogData = [
+//   {
+//     id: 1,
+//     year: '2018',
+//     month: '12',
+//     date: '01',
+//     title: 'ダミー記事1',
+//     image: '2018/062.jpg',
+//   },
+//   {
+//     id: 2,
+//     year: '2018',
+//     month: '12',
+//     date: '02',
+//     title: 'ダミー記事2',
+//     image: '2018/051.jpg',
+//   },
+//   {
+//     id: 3,
+//     year: '2018',
+//     month: '11',
+//     date: '15',
+//     title: 'ダミー記事3ダミー記事3ダミー記事3ダミー記事3',
+//     image: '2018/047.jpg',
+//   },
+// ];
 interface YearListProps {
   year: string;
 }
 
 const YearList = ({ year }: YearListProps) => {
   //later const navigate = useNavigate();
-  const filteredArticles = dummyBlogData.filter((blog) => {
-    // const filteredArticles = blogData.filter((blog) => {
+  // const filteredArticles = dummyBlogData.filter((blog) => {
+  const filteredArticles = blogData.filter((blog) => {
     return blog.year === year;
   });
 
