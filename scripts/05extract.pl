@@ -1,14 +1,14 @@
 # すべてのブロッサムで作ったブログ形式のファイル(2005~2018)を、jsonに抽出する
 # input : blog/{yest}/{monty}/{date}/index.html
-# output : blogTitle.json
-# perl extract.pl
+# output : blogData.json
+# perl 05extract.pl
 
 #!/usr/bin/perl
 use strict;
 use warnings;
 use JSON;
 
-my $output_file = "blogTitle.json";
+my $output_file = "blogData.json";
 open(my $json_fh, '>', $output_file) or die "Cannot open $output_file for writing: $!";
 
 my $id = 1;
@@ -39,6 +39,28 @@ for my $year (glob("blog/*")) {
                 }
             }
 
+            my $image = "noimage";  # イメージの値を格納する変数
+            my $image_replaced = 0;
+            my $found_main_entry = 0; # 現在、うまく使えていない
+            while (my $line = <$html_fh>) {
+                if (!$image_replaced && $line =~ /<img src="\/bimages\/(\d{4}\/[^\s>]+\.jpg)"[^>]*>/) {
+                    my $new_image = $1;
+                    $image =~ s/noimage/$new_image/;
+                    $image_replaced = 1; # 置換済みフラグを立てる
+                    last; # 置換が完了したらループを抜ける
+                }
+                elsif (!$image_replaced && $line =~ /<td><img src="\/bimages\/(\d{4}\/[^\s>]+\.jpg)"[^>]*>\s*<\/td>/) {
+                    my $new_image = $1;
+                    $image =~ s/noimage/$new_image/;
+                    $image_replaced = 1; # 置換済みフラグを立てる
+                    last; # 置換が完了したらループを抜ける
+                }
+                # この行には入らないので諦める
+                if (!$found_main_entry && $line =~ /<!-- main blog entry column -->/) {
+                    $found_main_entry = 1; # メインエントリー部分を発見
+                }
+            }
+
             close($html_fh);
 
             # $titleの前後の空白や改行を削除
@@ -51,6 +73,7 @@ for my $year (glob("blog/*")) {
                 "month" => $month_value,
                 "date" => $date_value,
                 "title" => $title, 
+                "image" => $image, 
             );
             push @blog_entries, \%entry;
             $id++;
@@ -65,4 +88,4 @@ print $json_fh $json_data;
 
 close($json_fh);
 
-print "blogTitle.json ファイルが作成されました。\n";
+print "blogData.json ファイルが作成されました。\n";

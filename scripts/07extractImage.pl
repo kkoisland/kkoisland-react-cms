@@ -1,3 +1,4 @@
+# Didn't complete, but use to add 05extract.pl
 # index.htmlからimageファイルパスを抜き出すスクリプト
 #!/usr/bin/perl
 use strict;
