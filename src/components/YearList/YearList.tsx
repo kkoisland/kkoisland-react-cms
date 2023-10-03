@@ -59,7 +59,7 @@ const YearList = ({ year }: YearListProps) => {
               {blogDate.year}/{blogDate.month}/{blogDate.date}
             </span>
             <h3>{blogDate.title}</h3>
-            {blogDate.image && (
+            {blogDate.image && blogDate.image !== 'noimage' && (
               <img
                 src={`/bimages/${blogDate.image}`}
                 width="200"
@@ -67,6 +67,7 @@ const YearList = ({ year }: YearListProps) => {
                 alt={blogDate.title}
               />
             )}
+            {blogDate.image === 'noimage' && <div className="no-image">no image</div>}
           </div>
         ))}
       </div>

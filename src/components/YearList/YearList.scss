@@ -31,6 +31,9 @@
   text-align: center; /* カード内のテキストを中央揃え */
 }
 
+.no-image {
+}
+
 @media (max-width: 1000px) {
   .card {
     flex: 0 0 calc(50% - 1rem); /* ウィンドウ幅が1000px以下の場合、2列に */
