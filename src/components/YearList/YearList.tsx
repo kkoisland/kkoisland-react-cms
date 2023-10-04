@@ -67,7 +67,9 @@ const YearList = ({ year }: YearListProps) => {
                 alt={blogDate.title}
               />
             )}
-            {blogDate.image === 'noimage' && <div className="no-image">no image</div>}
+            {blogDate.image === 'noimage' && (
+              <div className="no-image no-image-gradient-text">no image</div>
+            )}
           </div>
         ))}
       </div>
