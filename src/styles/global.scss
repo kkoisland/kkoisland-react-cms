@@ -27,6 +27,8 @@ global > color
   --color-primary-dark: #ff4f6c;
 }
 
+$color-primary-sass: #ff4f6c;
+
 @media (prefers-color-scheme: dark) {
   /* システムがダークモードの場合のスタイル */
   :root {
