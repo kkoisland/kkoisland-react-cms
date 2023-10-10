@@ -23,6 +23,7 @@ const Header = () => {
     '2006',
     '2005',
     '2004以前',
+    'English',
   ];
 
   return (
@@ -60,11 +61,26 @@ const Header = () => {
       </div>
       <nav>
         <ul className="year-list-item">
-          {years.map((year) => (
-            <Link to={`/${year}`} key={year}>
-              {year}
-            </Link>
-          ))}
+          {years.map((year) => {
+            if (year === '2004以前') {
+              return (
+                <a href="/diary/d_sanjose.html" key={year}>
+                  {year}
+                </a>
+              );
+            } else if (year === 'English') {
+              return (
+                <a href="/english.html" key={year}>
+                  {year}
+                </a>
+              );
+            }
+            return (
+              <Link to={`/${year}`} key={year}>
+                {year}
+              </Link>
+            );
+          })}
         </ul>
       </nav>
     </header>
