@@ -1,6 +1,6 @@
 # すべてのホームページで作ったファイル(1998-2004)の*.htmlの文字エンコーディングを変換する。<meta charset="utf-8" />とする
-# input : diary_input
-# output : diary_output_meta_utf8
+# input : utf8_output
+# output : utf8_output_meta_utf8
 # perl 04convert_diary_meta.pl
 
 #!/usr/bin/perl

@@ -1,6 +1,6 @@
 # すべてのホームページで作ったファイル(1998-2004)の*.htmlを、Shift-JISからUTF-8に変換する
-# input : diary
-# output : diary_output
+# input : utf8_input
+# output : utf8_output
 # perl 03convert_diary_utf8.pl
 
 #!/usr/bin/perl
