@@ -10,8 +10,8 @@ use Encode;
 use File::Copy::Recursive qw(dircopy);
 
 # 入力ディレクトリと出力ディレクトリを指定
-my $input_dir = "diary";
-my $output_dir = "diary_output";
+my $input_dir = "utf8_input";
+my $output_dir = "utf8_output";
 
 # 出力ディレクトリを作成（既に存在する場合はスキップ）
 mkdir $output_dir unless -d $output_dir;

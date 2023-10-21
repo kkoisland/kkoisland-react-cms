@@ -9,8 +9,8 @@ use warnings;
 use File::Copy::Recursive qw(dircopy);
 
 # 入力ディレクトリと出力ディレクトリを指定
-my $input_dir = "diary_input";
-my $output_dir = "diary_output_meta_utf8";
+my $input_dir = "utf8_output";
+my $output_dir = "utf8_output_meta_utf8";
 
 # 出力ディレクトリを作成（既に存在する場合はスキップ）
 mkdir $output_dir unless -d $output_dir;
