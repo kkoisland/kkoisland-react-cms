@@ -48,6 +48,7 @@ sub convert_file_encoding {
   # 文字列置換を行い、<META HTTP-EQUIV="content-type" content="text/html;charset=Shift_JIS"> を <meta charset="utf-8" /> に変換
   foreach my $line (@lines) {
     $line =~ s/<META HTTP-EQUIV="content-type" content="text\/html;charset=Shift_JIS">/<meta charset="utf-8" \/>/gi;
+    $line =~ s/<META HTTP-EQUIV="content-type" content="text\/html;charset=x-sjis">/<meta charset="utf-8">/gi;
   }
 
   open my $output_fh, '>:utf8', $file or die "Cannot open $file: $!";
