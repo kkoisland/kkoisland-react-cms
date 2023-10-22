@@ -26,25 +26,57 @@
   align-items: center;
 }
 
+// .year-list-item {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   list-style: none;
+//   padding: 0;
+//   margin: 0; /* リストの外側の余白を削除 */
+//   font-size: 1rem;
+//   gap: 10px;
+//   height: 2.5rem;
+//   font-weight: 600;
+//   background: linear-gradient(45deg, #fce6e6, #fcd1d1, #fabbbb, #faa5a5, #fa8f8f);
+// }
+
+// .year-list-item a {
+//   text-decoration: none;
+//   margin: 0 0.25rem; /* リンク間のマージンを設定 */
+//   color: var(--color-font-base);
+//   transition: color 0.3s ease-in-out;
+// }
+
 .year-list-item {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   list-style: none;
-  padding: 0;
-  margin: 0; /* リストの外側の余白を削除 */
+  // padding: 0;
+  margin: 0;
   font-size: 1rem;
   gap: 10px;
-  height: 2.5rem;
   font-weight: 600;
   background: linear-gradient(45deg, #fce6e6, #fcd1d1, #fabbbb, #faa5a5, #fa8f8f);
+  padding: 0 6rem; /* 左右の余白 */
 }
 
 .year-list-item a {
   text-decoration: none;
-  margin: 0 0.25rem; /* リンク間のマージンを設定 */
+  margin: 0 0.25rem;
   color: var(--color-font-base);
   transition: color 0.3s ease-in-out;
+  flex-grow: 1;
+  flex-basis: calc((100% - 6rem) / 6); /* 左右の余白を考慮して均等に幅を設定 */
+  max-width: calc((100% - 6rem) / 6); /* 左右の余白を考慮して最大幅を設定 */
+}
+
+@media screen and (min-width: 768px) {
+  .year-list-item a {
+    flex-basis: auto; /* 自動的に幅を決定 */
+    max-width: none; /* 最大幅を解除 */
+  }
 }
 
 .year-list-item a:hover {
