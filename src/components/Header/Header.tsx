@@ -23,7 +23,7 @@ const Header = () => {
     '2006',
     '2005',
     '2004以前',
-    'English',
+    // 'English',
   ];
 
   return (
@@ -68,13 +68,14 @@ const Header = () => {
                   {year}
                 </a>
               );
-            } else if (year === 'English') {
-              return (
-                <a href="/english.html" key={year}>
-                  {year}
-                </a>
-              );
             }
+            // else if (year === 'English') {
+            //   return (
+            //     <a href="/english.html" key={year}>
+            //       {year}
+            //     </a>
+            //   );
+            // }
             return (
               <Link to={`/${year}`} key={year}>
                 {year}
