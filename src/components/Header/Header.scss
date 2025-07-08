@@ -20,10 +20,17 @@
   transition: background 0.3s ease-in-out;
 }
 
-.icon-style-div {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+.profile-link {
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: var(--color-font-primary);
+
+  &:hover {
+    color: #007acc;
+  }
 }
 
 // .year-list-item {
