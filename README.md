@@ -18,7 +18,7 @@ npm start
 # After setup: http://localhost:3000/
 ```
 
-## Setup
+## Development Setup
 
 ```bash
 npx create-react-app kkoisland-react-cms --template typescript
@@ -34,12 +34,12 @@ npm install @fortawesome/free-brands-svg-icons // Icons: Github, Twitter, Linked
 ## Tech Stack
 
 - React (Create React App + TypeScript)
-- React Router
-- SCSS
-- Font Awesome (Social icons)
-- Article metadata managed via JSON
-- Reuse of HTML content (with encoding conversion)
-- Perl scripts (convert_encoding.pl, extract.pl)
+- React Router (page routing)
+- SCSS (component-scoped styling)
+- Font Awesome (social icons)
+- JSON (article metadata management)
+- HTML reuse (with encoding conversion from legacy files)
+- Perl scripts (for encoding conversion and HTML extraction)
 
 ## Project Structure
 
@@ -48,7 +48,7 @@ src/
   |- data/
   |   |- data.json
   |
-  |- components/ (UIの一部を構成する再利用可能な部品)
+  |- components/ (Reusable UI components)
   |   |- index.ts
   |   |- Header/
   |   |   |- Header.tsx
@@ -63,22 +63,8 @@ src/
   |   |   |- BlogDetail.tsx
   |   |   |- BlogDetail.scss
   |
-  |- containers/ (ビジネスロジックを管理)
-  |   |- index.ts
-  |   |- Main/
-  |   |   |- Main.tsx
-  |   |   |- Main.scss
-  |
-  |- hooks/ (if necessary)
-  |   |- useCustomHook1.ts
-  |   |- useCustomHook2.ts
-  |
-  |- models/ (if necessary)
-  |   |- Model1.ts
-  |   |- Model2.ts
-  |
   |- styles/
-  |   |- global.scss (全体共通のスタイル)
+  |   |- global.scss (Global styles)
   |   |- utils/
   |   |   |- utils.scss
   |
@@ -90,9 +76,12 @@ src/
  scripts/
   |- convert_encoding.pl
 
-src/contents/Blog/{year}/{month}/{date}/index.rss
-src/contents/Blog/{year}/{month}/{date}/index.html
-src/contents/Bimages/{year}/xxx.jpg
+src/contents/
+  |- Blog/{year}/{month}/{date}/
+  |   |- index.html   # Article content (legacy HTML)
+  |   |- index.rss    # Metadata (exported from old CMS)
+  |- Bimages/{year}/
+      |- xxx.jpg      # Images used in blog posts
 ```
 
 ## Example data.json
